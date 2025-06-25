@@ -2,7 +2,7 @@ name: GitHub Snake Animation
 
 on:
   schedule:
-    - cron: "0 21 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -33,4 +33,4 @@ jobs:
           publish_dir: ./dist
           publish_branch: trash
           keep_files: true 
-          commit_message: "🔄 Auto-update snake animation [skip ci]"
+          commit_message: "Auto-update snake animation"
