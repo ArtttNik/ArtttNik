@@ -4,7 +4,6 @@
 </p>
 
 <!-- тут понятно -->
-
 🏫 **Student at Peter the Great St. Petersburg Polytechnic University**
 
 💻 **Skills:** C++ | Python | Pascal :)  
@@ -24,8 +23,8 @@
     <img src="https://img.shields.io/badge/Telegram-@Artnik__tg-2CA5E0?style=flat&logo=telegram&logoColor=white" alt="telegram">
   </a>
 </p>
-<!-- тут змейка -->
 
+<!-- тут змейка -->
 <div align="left">
   <picture>
     <source 
@@ -39,7 +38,7 @@
     <img
       alt="GitHub Contribution Snake"
       src="https://raw.githubusercontent.com/ArtttNik/ArtttNik/trash/github-snake.svg"
-      width="50%"
+      width="85%"
     >
   </picture>
 </div>
