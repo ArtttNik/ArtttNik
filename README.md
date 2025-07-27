@@ -6,8 +6,7 @@
 <!-- тут понятно -->
 🏫 **Student at Peter the Great St. Petersburg Polytechnic University**
 
-💻 **Skills:** C++ | Python | Pascal :)  
-🌱 **Currently learning:** Go   
+<!--  💻 **Skills:** C++ | Python | Pascal :) --> 
 
 <!-- тут ЯП -->
 🧬 **Programming languages**
