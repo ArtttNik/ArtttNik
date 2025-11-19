@@ -15,6 +15,9 @@
 
 <!-- тут связь -->
 <p style="margin-top: -10px;">
+  <a href="https://gitlab.com/ArtttNik" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/GitLab-ArtttNik-orange?style=flat&logo=gitlab&logoColor=white" alt="gitlab">
+  </a>
   <a href="mailto:ArtttNik@gmail.com" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/Gmail-ArtttNik@gmail.com-red?style=flat&logo=gmail&logoColor=white" alt="email">
   </a>
