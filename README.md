@@ -8,10 +8,10 @@
 
 <!--  💻 **Skills:** C++ | Python | Pascal :) --> 
 
-<!-- тут ЯП -->
+<!-- тут ЯП почему-то перестали работать, но они и не нужны сильно мне =/
 🧬 **Programming languages**
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArtttNik&layout=compact&hide_title=true&card_width=200&theme=github_dark&hide_border=true&langs_count=8" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArtttNik&layout=compact&hide_title=true&card_width=200&theme=github_dark&hide_border=true&langs_count=8" />-->
 
 <!-- тут связь -->
 <p style="margin-top: -10px;">
