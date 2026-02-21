@@ -3,10 +3,10 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=10000000&color=20C20E&center=false&vCenter=false&width=435&lines=Hi,+there!+I'm+Artyom.+=)" alt="Hi, there. I'm Artyom." />
 </p>
 
-<!-- тут понятно -->
+<!-- тут понятно
 🏫 **Student at Peter the Great St. Petersburg Polytechnic University**
 
-<!--  💻 **Skills:** C++ | Python | Pascal :) --> 
+ 💻 **Skills:** C++ | Python | Pascal :) --> 
 
 <!-- тут ЯП почему-то перестали работать, но они и не нужны сильно мне =/
 🧬 **Programming languages**
