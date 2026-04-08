@@ -2,22 +2,32 @@ name: Update Language Statistics
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # Каждый день в полночь UTC
-  workflow_dispatch:       # Ручной запуск через вкладку Actions
+    - cron: "0 0 * * *"    # Каждый день в полночь UTC
+  workflow_dispatch:        # Ручной запуск
 
 permissions:
-  contents: write          # Разрешить коммит новых изображений
+  contents: write
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Generate language stats images
         uses: stefvuck/github-profile-language-analytics@v1.1.0
         with:
-          github_token: ${{ secrets.STATS_TOKEN }}   # Токен с доступом к приватным репозиториям
-          visualization_types: "leaderboard,pie"      # Типы диаграмм
-          output_path: "stats"                        # Папка, куда сохранятся PNG
-          exclude_languages: "HTML,CSS"               # При необходимости исключить языки
+          github_token: ${{ secrets.STATS_TOKEN }}
+          visualization_types: "leaderboard,pie"
+          output_path: "dist"      # Генерируем сразу в dist
+          exclude_languages: "HTML,CSS"
+
+      - name: Deploy to trash branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: trash
+          keep_files: true         # Важно! Чтобы не удалить змейку
+          commit_message: "Update language statistics"
