@@ -19,16 +19,22 @@ jobs:
         run: |
           git fetch origin trash || true
           git checkout trash || git checkout -b trash origin/trash || git checkout -b trash
-
-      - name: Pull latest changes
-        run: |
           git pull origin trash || true
 
-      - name: Generate stats
+      - name: Generate stats (mirror)
         run: |
-          curl -L -H "Authorization: token ${{ secrets.STATS_TOKEN }}" \
-          "https://github-readme-stats.vercel.app/api/top-langs/?username=ArtttNik&layout=compact&langs_count=8&theme=github_dark&hide_border=true&count_private=true" \
+          curl -L \
+          "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=ArtttNik&layout=compact&langs_count=8&theme=github_dark&hide_border=true&count_private=true" \
           -o top-langs.svg
+
+      - name: Validate SVG
+        run: |
+          if grep -q "<svg" top-langs.svg; then
+            echo "SVG valid"
+          else
+            echo "Invalid SVG, skipping commit"
+            exit 0
+          fi
 
       - name: Commit and push
         run: |
