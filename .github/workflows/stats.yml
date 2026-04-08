@@ -1,0 +1,35 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # раз в сутки (UTC)
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate stats
+        run: |
+          curl -H "Authorization: token ${{ secrets.STATS_TOKEN }}" \
+          "https://github-readme-stats.vercel.app/api/top-langs/?username=ArtttNik&layout=compact&langs_count=8&theme=github_dark&hide_border=true&count_private=true" \
+          -o top-langs.svg
+
+      - name: Move to trash branch
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git fetch origin trash || git checkout --orphan trash
+          git checkout trash || git checkout -b trash
+
+          mv top-langs.svg top-langs.svg || true
+
+          git add top-langs.svg
+          git commit -m "update stats" || echo "no changes"
+
+          git push origin trash
