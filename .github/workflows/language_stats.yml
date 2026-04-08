@@ -1,0 +1,23 @@
+name: Update Language Statistics
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # Каждый день в полночь UTC
+  workflow_dispatch:       # Ручной запуск через вкладку Actions
+
+permissions:
+  contents: write          # Разрешить коммит новых изображений
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate language stats images
+        uses: stefvuck/github-profile-language-analytics@v1.1.0
+        with:
+          github_token: ${{ secrets.STATS_TOKEN }}   # Токен с доступом к приватным репозиториям
+          visualization_types: "leaderboard,pie"      # Типы диаграмм
+          output_path: "stats"                        # Папка, куда сохранятся PNG
+          exclude_languages: "HTML,CSS"               # При необходимости исключить языки
