@@ -1,33 +1,81 @@
-name: Update Language Statistics
+name: GitHub Profile Updater
 
 on:
   schedule:
-    - cron: "0 0 * * *"    # Каждый день в полночь UTC
-  workflow_dispatch:        # Ручной запуск
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
-  update-stats:
+  snake:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Generate language stats images
-        uses: stefvuck/github-profile-language-analytics@v1.1.0
+        
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
         with:
-          github_token: ${{ secrets.STATS_TOKEN }}
-          visualization_types: "leaderboard,pie"
-          output_path: "dist"      # Генерируем сразу в dist
-          exclude_languages: "HTML,CSS"
-
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=white
+            dist/snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+          
       - name: Deploy to trash branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: trash
-          keep_files: true         # Важно! Чтобы не удалить змейку
-          commit_message: "Update language statistics"
+          force_orphan: true
+          commit_message: "Auto-update snake animation [skip ci]"
+
+  language-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Fetch language stats from GitHub API
+        run: |
+          mkdir -p stats
+          
+          # Получаем все репозитории (публичные и приватные)
+          REPOS=$(curl -s -H "Authorization: token ${{ secrets.STATS_TOKEN }}" \
+            "https://api.github.com/user/repos?per_page=100&type=all")
+          
+          # Парсим языки и считаем байты
+          echo "$REPOS" | jq -r '.[].languages_url' | while read url; do
+            curl -s -H "Authorization: token ${{ secrets.STATS_TOKEN }}" "$url"
+          done > all_languages.json
+          
+          # Создаём простой текстовый отчёт
+          jq -s 'add | to_entries | sort_by(-.value) | .[:8] | .[] | "\(.key): \(.value) bytes"' all_languages.json > stats/language_stats.txt
+          
+      - name: Generate language stats with github-readme-stats
+        run: |
+          # Используем публичное API github-readme-stats с токеном для приватных репозиториев
+          curl -L -H "Authorization: token ${{ secrets.STATS_TOKEN }}" \
+            "https://github-readme-stats.vercel.app/api/top-langs/?username=ArtttNik&layout=compact&hide_title=true&card_width=400&theme=github_dark&hide_border=true&langs_count=8&count_private=true" \
+            -o stats/top_languages.svg
+            
+      - name: Deploy stats to trash branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./stats
+          publish_branch: trash
+          keep_files: true
+          commit_message: "Auto-update language stats [skip ci]"
