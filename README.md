@@ -30,7 +30,7 @@
 ### 🛠️ Технические навыки
 <table>
   <tr>
-    <td><strong>💚 Go (Основной)</strong></td>
+    <td><strong>🐽 Go (Основной)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Go-⭐_Основной-00ADD8?style=flat&logo=go&logoColor=white"/>
     </td>
@@ -44,7 +44,7 @@
     </td>
   </tr>
   <tr>
-    <td><strong>БД</strong></td>
+    <td><strong>🐽 БД</strong></td>
     <td>
       <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white"/>
       <img src="https://img.shields.io/badge/NoSQL-006400?style=flat"/>
@@ -60,7 +60,7 @@
     </td>
   </tr>
   <tr>
-    <td><strong>CI/CD</strong></td>
+    <td><strong>🐽 CI/CD</strong></td>
     <td>
       <img src="https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat&logo=gitlab&logoColor=white"/>
       <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white"/>
@@ -87,11 +87,8 @@
 #### Дополнительные курсы:
 
 - **Введение в Go — "Технологии программирования Yadro-Политех"**  
-
 - **Разработка веб-сервисов на Golang — ВКонтакте**  
-
 - **Распределённые вычисления — ВКонтакте** *(в процессе)*   
-
 - **DevOps/SRE-инженер — ВКонтакте** *(в процессе)*  
 
 
