@@ -10,9 +10,9 @@
 
 <!-- тут связь -->
 <p style="margin-top: -10px;">
-  <!--<a href="https://hh.ru/resume/ТВОЙ_ID" target="_blank">
+  <a href="https://spb.hh.ru/resume/aa8b06c7ff0fb69caa0039ed1f533737387674" target="_blank">
     <img src="https://img.shields.io/badge/📄_Резюме-hh.ru-000000?style=flat&logo=headhunter&logoColor=white" alt="resume">
-  </a>-->
+  </a>
   <a href="https://gitlab.com/ArtttNik" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/GitLab-ArtttNik-orange?style=flat&logo=gitlab&logoColor=white" alt="gitlab">
   </a>
