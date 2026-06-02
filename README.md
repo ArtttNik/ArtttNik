@@ -138,7 +138,7 @@
 <img src="https://img.shields.io/badge/REST_API-000000?style=flat"/>
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white"/>
 
-<!-- тут змейка -->
+<!-- тут змейка
 <div align="left">
   <picture>
     <source 
@@ -155,4 +155,4 @@
       width="85%"
     >
   </picture>
-</div>
+</div> -->
