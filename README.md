@@ -6,9 +6,11 @@
 <!--
 ---
 
+
+
 ### 🐽 Найти меня можно тут
 
-<!-- тут связь -->
+ 
 <p style="margin-top: -10px;">
   <a href="https://spb.hh.ru/resume/aa8b06c7ff0fb69caa0039ed1f533737387674" target="_blank">
     <img src="https://img.shields.io/badge/📄_Резюме-hh.ru-000000?style=flat&logo=headhunter&logoColor=white" alt="resume">
@@ -77,7 +79,7 @@
 
 ---
 
-<!-- тут образование -->
+
 #### 📖 Образование
 
 ### Санкт-Петербургский Политехнический Университет Петра Великого
@@ -95,7 +97,8 @@
 
 ---
 
-<!-- тут опыт работы -->
+
+
 ### 💼 Опыт работы
 
 #### Лаборатория "Технологии программирования Yadro-Политех" (с 10.2025)
@@ -138,7 +141,7 @@
 <img src="https://img.shields.io/badge/REST_API-000000?style=flat"/>
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white"/>
 
-<!-- тут змейка
+
 <div align="left">
   <picture>
     <source 
@@ -155,6 +158,6 @@
       width="85%"
     >
   </picture>
-</div> -->
+</div>
 
 -->
