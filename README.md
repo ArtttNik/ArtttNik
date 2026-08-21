@@ -3,7 +3,7 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=10000000&color=20C20E&center=false&vCenter=false&width=435&lines=Hi,+there!+I'm+Artyom.+=)" alt="Hi, there. I'm Artyom." />
 </p>
 
-
+<!--
 ---
 
 ### 🐽 Найти меня можно тут
@@ -156,3 +156,5 @@
     >
   </picture>
 </div> -->
+
+-->
